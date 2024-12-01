@@ -1,0 +1,487 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: -apple-system, sans-serif;
+  font-size: large;
+}
+
+:root {
+  --bg-color: #000;
+  --snd-bg-color: #040404;
+  --text-color: #fff;
+  --main-color: #45ffca;
+  --bgc-color: #45ffca;
+}
+
+html {
+  font-size: 62.5%; /* Base size for rem units */
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+section {
+  min-height: 100vh;
+  padding: 10rem 8% 2rem;
+}
+
+/* Header */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 9%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  transition: all 0.5s ease;
+}
+
+.logo {
+  font-size: 3rem;
+  color: var(--text-color);
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+span {
+  color: var(--main-color);
+}
+
+.navbar {
+  display: flex;
+}
+
+.navbar a {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--text-color);
+  margin-left: 4rem;
+  transition: all 0.5s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: var(--main-color);
+  border-bottom: 3px solid var(--main-color);
+}
+
+.nav-btn {
+  display: inline-block;
+  padding: 1rem 2.8rem;
+  background: transparent;
+  color: var(--main-color);
+  border: 2px solid var(--main-color);
+  border-radius: 1rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  transition: all 0.5s ease;
+}
+
+.nav-btn:hover {
+  background: var(--main-color);
+  color: var(--text-color);
+  box-shadow: 0 0 18px var(--main-color);
+}
+
+#menu-icon {
+  font-size: 3.6rem;
+  color: var(--main-color);
+  cursor: pointer;
+  display: none;
+}
+
+
+/* Card section */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  gap: 3rem;
+  flex-wrap: wrap; /* Ensures the cards wrap on smaller screens */
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background-color: #dc1414;
+  padding: 10px;
+  width: 320px;  /* Fixed width */
+  height: 500px; /* Fixed height */
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent content from overflowing */
+}
+
+.card-image {
+  max-width: 100px;
+  height: auto; /* Maintain aspect ratio of images */
+  margin: 0 auto;
+  color: purple;
+}
+
+.card-content {
+  flex-grow: 1;
+  display: flex;
+  /* background-color:blue ; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+  text-align: center; /* Center the text */
+  /* overflow: hidden; Prevent content overflow */
+}
+
+.card-content .card-title {
+  font-size: x-large;
+  /* background-color: aliceblue; */
+  white-space: nowrap; /* Prevent the title from wrapping */
+  padding: 10px 0px;
+}
+
+.card-details {
+  text-align: center;
+  /* background-color: blueviolet; */
+  padding: 10px 0px;
+
+}
+
+.card-details .card-text {
+  overflow: auto; /* Scroll if the text exceeds the card height */
+}
+
+.card-text span {
+  text-align: center;
+  color: #862020;
+}
+
+.card-footer .card-button{
+  border-radius: 20%;
+  border-width: 2px;
+  background-color: transparent;
+  padding: 10px 10px;
+}
+
+
+
+
+
+@media(max-width:1200px){
+  html{
+      font-size: 55%;
+  }
+}
+
+@media(max-width: 1024px) {
+  #menu-icon{
+    display: block;
+  }
+
+  .navbar{
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 255px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-color);
+    transition: all 0.5s ease;
+  }
+
+  .navbar a{
+    display: block;
+    padding: 17px;
+    font-size: 22px;
+  }
+
+  .navbar.active{
+    right: 0;
+  }
+
+  header{
+    padding: 2rem 3%;
+  }
+
+  section{
+    padding: 10rem 3%;
+  }
+
+  .container{
+    display: grid;
+    padding: 7rem;
+    grid-template-columns: repeat(2,1fr);
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 5rem;
+  }
+}
+
+
+
+
+@media(max-width:991px){
+  #menu-icon{
+      display: block;
+  }
+
+  .navbar{
+      position: absolute;
+      top: 100%;
+      right: -100%;
+      width: 255px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-color);
+      transition: all 0.5s ease;
+  }
+
+  .navbar a{
+      display: block;
+      padding: 17px;
+      font-size: 22px;
+  }
+
+  .navbar.active{
+      right: 0;
+  }
+
+  header{
+      padding: 2rem 3%;
+  }
+
+  section{
+      padding: 10rem 3%;
+  }
+
+  .container{
+      display: grid;
+      padding: 7rem;
+      grid-template-columns: repeat(2,1fr);
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 5rem;
+  }
+}
+
+
+
+@media(max-width:786px){
+  .container{
+      flex-direction: column;
+      padding: 7rem;
+      grid-template-columns: repeat(1,1fr);
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 5rem;
+  }
+
+  .container h5{
+      font-size: 4.5rem;
+      margin-top: 1.5rem;
+  }
+
+
+  .card-content{
+      order: 2;
+  }
+
+  .card-image img{
+      width: 70vw;
+      margin-top: 4rem;
+  }
+
+}
+
+
+@media(max-width:617px){
+  .card-image img{
+      width: 80vw;
+      margin-top: 8rem;
+  }
+
+
+}
+
+@media(max-width:450px){
+  html{
+      font-size: 50%;
+  }
+}
+
+
+
+
+/* form container code */
+
+
+.form-container {
+    background: #a58181;
+    border-radius: 10px;
+    padding: 20px 30px;
+    font: var(--snd-bg-color);
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  h1, h2 {
+    text-align: center;
+    color: #6c63ff;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  label {
+    display: block;
+    font-weight: bold var(--bg-color);
+    margin-bottom: 5px;
+
+
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #040404;
+    /* font: var(--snd-bg-color); */
+    border: 2px solid #6c63ff;
+    border-radius: 5px;
+    font-size: 16px var(--bg-color);
+    outline: none;
+    transition: all 0.3s ease;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: #42e695;
+    box-shadow: 0 0 5px rgba(66, 230, 149, 0.5);
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  button {
+    width: 100%;
+    background: #6c63ff;
+    color: #fff;
+    border: none;
+    padding: 12px 0;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  button:hover {
+    background: #42e695;
+  }
+
+
+  .gender-options {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .gender-options label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+  }
+
+  input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #6c63ff; /* Custom radio button color */
+    cursor: pointer;
+  }
+
+
+
+
+  select[multiple] {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #6c63ff;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  select[multiple]:focus {
+    border-color: #42e695;
+    box-shadow: 0 0 5px rgba(66, 230, 149, 0.5);
+  }
+
+
+
+  /* .form-group {
+    margin-bottom: 20px;
+  }
+  .form-group label {
+    font-size: 16px;
+    margin-left: 5px;
+    color: #333;
+    display: inline-block;
+  }
+
+  input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+    cursor: pointer;
+  } */
+  /* select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #6c63ff;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  select:focus {
+    border-color: #42e695;
+    box-shadow: 0 0 5px rgba(66, 230, 149, 0.5);
+  }
+
+  select option {
+    font-size: 16px;
+    color: #333;
+  } */
